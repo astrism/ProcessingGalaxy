@@ -5,8 +5,8 @@ import gifAnimation.*; // http://www.extrapixel.ch/processing/gifAnimation/
  
 float pi=4*atan(1);
  
-int stars=5000; // only ...
-int Rmax=600; // galaxy radius
+int stars=4000; // only ...
+int Rmax=document.width < document.height ? document.width / 2 : document.height / 2; // galaxy radius
 int triSize = 20;
 float speed=0.05;  // rotation speed
  
@@ -19,11 +19,13 @@ float []radius=new float[stars];
  
 float cx; float cy; //center
  
-color white = color(255,255,255, 85); // shapes
+color white = color(100, 175, 175, 85); // shapes
+PImage textureImage;
+
 void setup()
 {
-	size(screen.width, screen.height);
-	background(0); //set bg color
+	size(document.width, document.height);
+	background(34, 37, 57); // clear the canvas
 
 	// begin in the center
 	cx = width/2;
@@ -33,11 +35,14 @@ void setup()
 		angle[i]= random(0,2*pi);
 		radius[i]=random(1,Rmax);
 	}
+
+
+    textureImage = loadImage("sxc1337673_22204404.jpg");
+
 	noLoop();
 }
  
 void draw(){
-  background(0); // clear the canvas
   noStroke();
   fill(white);
   alpha(white);
@@ -92,10 +97,21 @@ void drawTriangle(float newX, float newY) {
 }
 
 void keyPressed() {
+  println("code=" + keyCode);
+
   if(keyCode == UP) { eratio=eratio+0.1; draw();}
   if(keyCode == DOWN) { eratio=eratio-0.1; draw();}
   if(keyCode == LEFT) { etwist=etwist+0.0001; draw();}
   if(keyCode == RIGHT) { etwist=etwist-0.0001; draw();}
-  // println("eratio="+eratio+" etwist="+etwist);
+  if(keyCode == 80) { 
+  	background(34, 37, 57);
+  	draw();
+  	save("export.png");
+  }
+  if(keyCode == 65) {
+  	background(0, 0);
+  	draw();
+  	save("export.png");
+  }
   
 }
