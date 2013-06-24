@@ -116,32 +116,32 @@ void defaultSetup()
 	// size(5000, 5000);
 	var newSize = DEFAULT_RADIUS * 2;
 	size(newSize, newSize);
-	background(34, 37, 57); // clear the canvas
+	background(0, 0, 0); // clear the canvas
 }
 
 void keyPressed() {
   println("code=" + keyCode);
 
 	if(keyCode == UP) { 
-		background(34, 37, 57);
+		background(0, 0, 0);
 		DEFAULT_STARSIZE = triSize+1; 
 		println("DEFAULT_STARSIZE: " + DEFAULT_STARSIZE);
 		draw();
 	}
 	if(keyCode == DOWN) {
-		background(34, 37, 57);
+		background(0, 0, 0);
 		DEFAULT_STARSIZE = triSize-1; 
 		println("DEFAULT_STARSIZE: " + DEFAULT_STARSIZE);
 		draw();
 	}
 	if(keyCode == LEFT) { 
-		background(34, 37, 57);
+		background(0, 0, 0);
 		DEFAULT_ETWIST = DEFAULT_ETWIST + 0.001; 
 		println("DEFAULT_ETWIST: " + DEFAULT_ETWIST);
 		draw();
 	}
 	if(keyCode == RIGHT) { 
-		background(34, 37, 57);
+		background(0, 0, 0);
 		DEFAULT_ETWIST = DEFAULT_ETWIST - 0.001; 
 		println("DEFAULT_ETWIST: " + DEFAULT_ETWIST);
 		draw();
@@ -151,7 +151,7 @@ void keyPressed() {
 	if(keyCode == 80) { 
 		var newSize = 4000;
 		size(newSize, newSize);
-		background(34, 37, 57);
+		background(0, 0, 0);
 		draw();
 		// save("export.png");
 	}
